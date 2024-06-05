@@ -95,3 +95,14 @@ CloudFormation template 'vpc-subnet-and-mskclient.template' will create a VPC wi
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 # License
 This library is licensed under the MIT-0 License. See the LICENSE file.
+
+-----------------------------
+aws s3 cp glue_job_script/mskprocessing.py s3://aws-glue-gluemsk-XXXXXX-us-east-1/
+#Get bootstrp server name
+aws kafka get-bootstrap-brokers --cluster-arn arn:aws:kafka:us-east-1:XXXXXXXXXX:cluster/amazon-msk-and-glue/aafe8b07-8a06-4f78-a190-cdf82dcf5ebf-14
+
+#Java commad:
+java -jar target/amazon_msk_producer-1.0-SNAPSHOT-jar-with-dependencies.jar -brokers  v-2.xxxx.yyyy.zz.kafka.us-east-1.amazonaws.com:9096   -secretArn AmazonMSK_vpc-subnet-and-mskclient	 -region us-east-1 -registryName test-schema-registry -schema test_payload_schema -topic test -numRecords 10
+
+
+
